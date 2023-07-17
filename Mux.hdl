@@ -1,4 +1,4 @@
-CHP Mux {
+CHIP Mux {
     IN a, b, sel;
     OUT out;
 
