@@ -1,0 +1,12 @@
+// We could use a 3 input Xor for the sum, but i don't know how to calculate the carry
+
+CHIP FullAdder {
+    IN a, b, c;  
+    OUT sum,        
+        carry;
+
+    PARTS:
+    HalfAdder(a=a, b=b, sum=tmpSum, carry=firstTmpCarry);
+    HalfAdder(a=tmpSum, b=c, sum=out, carry=secondTmpCarry);
+    Or(a=firstTmpCarry, b=secondTmpCarry, out=carry);
+}
